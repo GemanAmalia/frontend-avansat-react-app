@@ -167,7 +167,7 @@ button {
 }
 
 .register-btn {
-  background-color: #1ab5fc;
+  background-color: #c5a297;
   position: relative;
   top: 60px;
   text-align: center;
@@ -220,7 +220,7 @@ button {
 }
 
 .error {
-  background-color: #c51244;
+  background-color: #c691a0d9;
   color: white;
   border: 1px solid black; 
 }

@@ -7,7 +7,8 @@ import {Login} from "./Authentication/Login";
 import {Register} from "./Authentication/Register";
 import { RecoverPassword } from "./Authentication/RecoverPassword";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-
+import { Therapists } from "./Therapists/Therapists";
+import {Home } from "./Home/Home";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -32,6 +33,8 @@ function App() {
         <Route exact path="/Authentication/RecoverPassword" element={<RecoverPassword/>}/>
         <Route exact path="/Authentication/Register" element={<Register/>}/>
         <Route exact path="" element={<Login />} />
+        <Route exact path="/Home" element={<Home/>}/>
+        <Route exact path="/Therapists" element={<Therapists/>}/>
       </Routes>
     </Router>
     </>

@@ -1,0 +1,56 @@
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #c5a297;
+    height: 80px;
+    margin: -8px;
+  }
+
+.navbar-links {
+    font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif; 
+    height: 70%;
+    font-size: 23px;
+}
+  
+.navbar-ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+  
+.navbar-links li {
+    list-style: none;
+}
+  
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+  
+.navbar-links li:hover {
+    box-shadow: inset 200px 0 0 0 #75594550;
+    border-radius: 7px;
+    transition: 700ms linear;
+}
+
+.logout-button{
+    font-size: 10px;
+    background-color: #c5a297;
+    border: none;
+    cursor: pointer;
+    font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif; 
+    font-size: 20px;
+    color: white;
+	position: center;
+    margin: 20px;
+    padding: 10px;
+}
+.logout-button:hover {
+    box-shadow: inset 700px 0 0 0 #75594550;
+    border-radius: 7px;
+    transition: 700ms linear;
+}
