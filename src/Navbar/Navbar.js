@@ -31,6 +31,9 @@ export default function Navbar() {
             <li>
               <CustomLink to="/Therapists" id="therapists-tab">Therapists</CustomLink>
             </li>
+            <li>
+              <CustomLink to="/Profile" id="profile-tab">Profile</CustomLink>
+            </li>
           </ul>
         </div>
         <button id="logout-button" className="logout-button">Logout</button>

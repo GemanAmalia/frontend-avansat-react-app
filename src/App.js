@@ -2,13 +2,17 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import {db} from "./firebase-config";
 import {collection, getDocs} from "firebase/firestore";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import './Authentication/Authentication.css';
 import {Login} from "./Authentication/Login";
 import {Register} from "./Authentication/Register";
 import { RecoverPassword } from "./Authentication/RecoverPassword";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { Therapists } from "./Therapists/Therapists";
 import {Home } from "./Home/Home";
+import { Profile } from "./Profile/Profile";
+
+
+
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -35,6 +39,7 @@ function App() {
         <Route exact path="" element={<Login />} />
         <Route exact path="/Home" element={<Home/>}/>
         <Route exact path="/Therapists" element={<Therapists/>}/>
+        <Route exact path="/Profile" element={<Profile/>}/>
       </Routes>
     </Router>
     </>
