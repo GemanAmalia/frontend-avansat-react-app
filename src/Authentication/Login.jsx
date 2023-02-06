@@ -18,7 +18,7 @@ export const Login = (props) => {
             <div className="div-login">   
                 <div>
                     <Reading className="reading"/>
-                    <h1 className="title"> THERAPY </h1>
+                    <h1 className="title"> THERAPY HUB</h1>
                 </div>
                 <div className="auth-form-container-login">
                     <form className="login-form" onSubmit={handleSubmit}>

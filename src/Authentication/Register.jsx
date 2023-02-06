@@ -20,7 +20,7 @@ export const Register = (props) => {
             <div className="div-register">
                 <div>
                     <Reading className="reading"/>
-                    <h1 className="title">THERAPY</h1>
+                    <h1 className="title">THERAPY HUB</h1>
                 </div>
                 <div className="auth-form-container-register">
                     <form className="register-form" onSubmit={handleSubmit}>

@@ -1,7 +1,7 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import "./Navbar.css";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
 
 export default function Navbar() {
@@ -20,19 +20,21 @@ export default function Navbar() {
     );
   }
 
+
+
   return (
-    <div style={{ backgroundColor: "#f1f4f9", color: "#f1f4f9" }}>
+    <div id="myDiv" style={{ backgroundColor: "#f1f4f9", color: "#f1f4f9" }}>
       <nav className="navbar">
         <div className="navbar-links">
           <ul className="navbar-ul">
             <li>
-              <CustomLink to="/Home" id="home-tab">Home</CustomLink>
+              <NavLink to="/Home" id="home-tab">Home</NavLink>
             </li>
             <li>
-              <CustomLink to="/Therapists" id="therapists-tab">Therapists</CustomLink>
+              <NavLink to="/Therapists" id="therapists-tab">Therapists</NavLink>
             </li>
             <li>
-              <CustomLink to="/Profile" id="profile-tab">Profile</CustomLink>
+              <NavLink to="/Profile" id="profile-tab" >Profile</NavLink>
             </li>
           </ul>
         </div>

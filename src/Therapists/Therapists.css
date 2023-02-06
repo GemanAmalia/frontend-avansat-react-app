@@ -1,0 +1,51 @@
+.therapists-title {
+    margin-left: 35px;
+    margin-top: 50px;
+    font-size: 45px;
+    font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif; 
+    text-align: center;
+}
+.page-intro{
+    margin-left: 35px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    font-size: 25px;
+    text-align: justify;
+    margin-right: 45px;
+    font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif; 
+}
+
+.therapist-image{
+    width: 270px;
+    height: 330px;
+    border-radius: 20px;
+}
+
+.therapists-div{
+    font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif; 
+
+}
+.therapists-list{
+    display:flex;
+    align-items: center;
+    width: 95%;
+    margin-left: 30px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    border-bottom: 10px solid #75615b;
+    border-radius: 20px;
+    border-top: 10px solid #75615b;
+    padding-top: 5px;
+}
+
+.therapist-info {
+    margin-left: 30px;
+}
+.therapist-name {
+    font-size: 30px;
+}
+.therapist-about {
+    font-size: 20px;
+    text-align: justify;
+    margin-right: 20px;
+}

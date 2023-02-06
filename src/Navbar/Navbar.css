@@ -33,7 +33,7 @@
   
 .navbar-links li:hover {
     box-shadow: inset 200px 0 0 0 #75594550;
-    border-radius: 7px;
+    border-radius: 100px;
     transition: 700ms linear;
 }
 
@@ -51,6 +51,12 @@
 }
 .logout-button:hover {
     box-shadow: inset 700px 0 0 0 #75594550;
-    border-radius: 7px;
+    border-radius: 100px;
     transition: 700ms linear;
 }
+
+.active {
+    
+    background-color: #59484343;
+    border-radius: 100px;
+  }
