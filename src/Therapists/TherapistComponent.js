@@ -1,4 +1,3 @@
-
 export default function TherpistComponent(props) {
     const {name, age, description, img, contact} = props
 

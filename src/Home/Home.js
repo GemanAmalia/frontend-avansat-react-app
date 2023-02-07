@@ -1,11 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import "./Home.css";
+import {db} from "../firebase-config";
+import {collection, getDocs} from "firebase/firestore";
+import TestimonialComponent from "./TestimonialComponent";
+import Contact from "./Contact";
 
 export const Home = () => {
+    const [testimonials, setTestimonials] = useState([]);
+    const testimonialsCollectionRef = collection(db, "testimonials");
     
+    useEffect(() => {
+    
+        const getTestimonials = async () => {
+        const data = await getDocs(testimonialsCollectionRef);
+        setTestimonials(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+
+    getTestimonials();
+    }, [])
+
     return (
+        <>
         <div className="home-div">
             <Navbar></Navbar>
             <h1 className="home-title">Home</h1>
@@ -13,10 +30,13 @@ export const Home = () => {
             <p className="page-intro-home">Our clients come to us with a wide range of mental health challenges, from stress and anxiety to depression and trauma. But what they all have in common is a desire for a better life, and a willingness to invest in their mental health. With the support and guidance of our therapists, our clients are able to make real and lasting change. They learn new coping strategies, gain new insights into their thoughts and emotions, and develop greater resilience in the face of life's challenges.</p>
             <p className="page-intro-home">We're humbled by the stories of hope and healing that we hear from our clients every day. Here are just a few of their testimonials:</p>
             <div className="testimonials">
-
+                {testimonials.map((testimonial, i) => <TestimonialComponent {...testimonial} key={i}/>)}
             </div>
             <p className="page-intro-home">If you're ready to invest in your mental health and wellbeing, we'd love to help. Browse our directory of therapists today, and take the first step towards a happier, healthier life.</p>
         </div>
+        <Contact></Contact>
+        </>
+
 
     );
 }

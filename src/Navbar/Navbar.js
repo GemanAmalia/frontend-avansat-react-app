@@ -26,6 +26,7 @@ export default function Navbar() {
     <div id="myDiv" style={{ backgroundColor: "#f1f4f9", color: "#f1f4f9" }}>
       <nav className="navbar">
         <div className="navbar-links">
+          <h3 className="navbar-title">Therapy Hub</h3>
           <ul className="navbar-ul">
             <li>
               <NavLink to="/Home" id="home-tab">Home</NavLink>

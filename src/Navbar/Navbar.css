@@ -6,9 +6,15 @@
     background-color: #c5a297;
     height: 80px;
     margin: -8px;
-  }
-
+}
+.navbar-title{
+    margin-right: 810px;
+    font-size: 45px;
+    margin-top: 2px;
+}
 .navbar-links {
+    display: flex;
+
     font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif; 
     height: 70%;
     font-size: 23px;
