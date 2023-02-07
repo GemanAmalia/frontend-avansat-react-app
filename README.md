@@ -26,12 +26,10 @@ $ git clone https://github.com/[YOUR_GITHUB_USERNAME]/therapy-web-app.git
 
 ```
 $ npm install
-
 ```
 
 3. Start the development server
 
 ```
 $ npm start
-
 ```
