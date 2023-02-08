@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import {db} from "./firebase-config";
 import {collection, getDocs} from "firebase/firestore";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link, ProtectedRoute } from "react-router-dom";
 import './Authentication/Authentication.css';
 import {Login} from "./Authentication/Login";
 import {Register} from "./Authentication/Register";

@@ -1,18 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {ReactComponent as Avatar} from './avatar.svg';
 import {ReactComponent as Reading} from './reading.svg';
 import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from "../firebase-config";
 
 export const Login = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+    const [user, setUser] = useState({});
+    // const [error, setError] = useState('');
     const history = useNavigate();
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email);
+        // console.log("email login:" , email);
     }
 
+    useEffect(() => {
+        onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+    
+    }, []);
+
+    const login = async () => {
+        try {
+            const user = await signInWithEmailAndPassword(auth, email, pass);
+            // console.log("user login:", user);
+            history("/Home");
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
+
+    
+    const logout = async () => {
+        await signOut(auth);
+    };
+
+    
     return (
         <div className="App-auth">
             <div className="div-login">   
@@ -33,12 +60,14 @@ export const Login = (props) => {
                         <input className="input-login" value = {pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
                                 
                         <button id="recover-button" className="link-btn-recover" onClick={() => history("/Authentication/RecoverPassword")}>Forgot password?</button>
-                        <button id="login-button" className="login-btn" type="submit"><b>Login</b></button>
+                        <button id="login-button" className="login-btn" type="submit" onClick={login}><b>Login</b></button>
                     </form>
 
                     <button id="register-button" className="link-btn-login" onClick={() => history("/Authentication/Register")}>Don't have an account? Register here.</button>
                 </div>
             </div>
+            {/* <h1>{user ? user.email : "Not Logged In"}</h1> */}
+            {/* <button onClick={logout}>Signout</button> */}
         </div>
     );
 }
