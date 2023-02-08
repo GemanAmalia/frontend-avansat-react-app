@@ -27,9 +27,7 @@ export const Home = () => {
         const auxjwtToken = auth.onAuthStateChanged(function(user) {
             if (user) {
             user.getIdToken().then(function(idToken) {  
-                //   alert(idToken);
-                console.log("id token: ", idToken);
-                
+                // console.log("id token: ", idToken);                
                 if(idToken !== "") {
                     setJwtToken(idToken);
                 } else {
@@ -44,7 +42,7 @@ export const Home = () => {
     
 
     if ( jwtToken && jwtToken?.length !== 0) {
-        {console.log("jwt token ", jwtToken)}
+        // {console.log("jwt token ", jwtToken)}
         return (
             <>
                 <div className="home-div">

@@ -26,15 +26,11 @@ export const Therapists = () => {
     const auxjwtToken = auth.onAuthStateChanged(function(user) {
         if (user) {
           user.getIdToken().then(function(idToken) {  
-            //   alert(idToken);
-              console.log("id token: ", idToken);
-
               if(idToken !== "") {
                 setJwtToken(idToken);
               } else {
                 history("/Authentication/Login");
               }
-
               return idToken;
           });
         }

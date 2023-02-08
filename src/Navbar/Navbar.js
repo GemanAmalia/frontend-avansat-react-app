@@ -39,9 +39,6 @@ export default function Navbar() {
             <li>
               <NavLink to="/Therapists" id="therapists-tab">Therapists</NavLink>
             </li>
-            <li>
-              <NavLink to="/Profile" id="profile-tab" >Profile</NavLink>
-            </li>
           </ul>
         </div>
         <button id="logout-button" className="logout-button" onClick={logout}>Logout</button>
