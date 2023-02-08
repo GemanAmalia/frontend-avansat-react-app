@@ -19,7 +19,7 @@ This web app provides a convenient and accessible way for individuals to receive
 1. Clone the repository to your local machine
 
 ```
-$ git clone https://github.com/[YOUR_GITHUB_USERNAME]/therapy-web-app.git
+$ git clone https://github.com/GemanAmalia/frontend-avansat-react-app.git
 ```
 
 2. Install the necessary packages
