@@ -3,13 +3,17 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import {db} from "../firebase-config";
 import {collection, getDocs} from "firebase/firestore";
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from "../firebase-config";
 import TherpistComponent from "./TherapistComponent";
 import "./Therapists.css";
 
 export const Therapists = () => {
     const [therapists, setTherapists] = useState([]);
     const therapistsCollectionRef = collection(db, "therapists");
-    
+    const [jwtToken, setJwtToken] = useState([]);
+    const history = useNavigate();
+
     useEffect(() => {
     
         const getTherapists = async () => {
@@ -18,9 +22,27 @@ export const Therapists = () => {
     };
 
     getTherapists();
+
+    const auxjwtToken = auth.onAuthStateChanged(function(user) {
+        if (user) {
+          user.getIdToken().then(function(idToken) {  
+            //   alert(idToken);
+              console.log("id token: ", idToken);
+
+              if(idToken !== "") {
+                setJwtToken(idToken);
+              } else {
+                history("/Authentication/Login");
+              }
+
+              return idToken;
+          });
+        }
+      });
     }, [])
+    
 
-
+    if ( jwtToken && jwtToken?.length !== 0) {
     return (
         <div className="therapists-div">
             <Navbar></Navbar>
@@ -31,5 +53,8 @@ export const Therapists = () => {
                 {therapists.map((therap, i) => <TherpistComponent {...therap} key={i}/>)}
             </div>
         </div>
-    );
+    )
+    } else {
+        history("/Authentication/Login");
+    }
 }
