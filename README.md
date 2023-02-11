@@ -1,4 +1,4 @@
-# Therapy Web App
+# Therapy Hub Web App
 A platform connecting individuals with licensed therapists for online therapy sessions.
 
 
